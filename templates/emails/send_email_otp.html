@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Welcome — Verify Your Account</title>
+		<style>
+			/* Simple, email-friendly styles */
+			body { margin:0; padding:0; background:#ffffff; font-family: Arial, Helvetica, sans-serif; color:#111; }
+			.wrapper { width:100%; background:#ffffff; padding:20px 0; }
+			.container { max-width:600px; margin:0 auto; background:#ffffff; border:1px solid #e6e6e6; }
+			.header { background:#000000; color:#ffffff; padding:20px; text-align:center; }
+			.logo { font-size:22px; font-weight:700; letter-spacing:1px; }
+			.hero { padding:28px 24px; text-align:left; }
+			.greeting { font-size:18px; color:#111111; margin:0 0 12px 0; }
+			.lead { font-size:14px; color:#333333; margin:0 0 18px 0; line-height:1.4; }
+			.otp-box { display:block; width:100%; text-align:center; margin:18px 0; }
+			.otp { display:inline-block; background:#000000; color:#ffffff; font-size:28px; font-weight:700; padding:14px 22px; border-radius:6px; letter-spacing:6px; }
+			.cta { display:block; text-align:center; margin:20px 0 8px 0; }
+			.button { background:#D32F2F; color:#ffffff; text-decoration:none; padding:12px 20px; border-radius:6px; display:inline-block; font-weight:700; }
+			.muted { color:#666666; font-size:12px; }
+			.footer { background:#f8f8f8; padding:14px 20px; text-align:center; font-size:12px; color:#666666; }
+			@media (max-width:480px){ .otp { font-size:22px; padding:12px 18px; letter-spacing:4px; } .container{ margin:0 12px; } }
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<table class="container" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+				<tr>
+					<td class="header">
+						<div class="logo">Welcome to Our Store</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="hero">
+						<p class="greeting">Hello {{ user_name }},</p>
+						<p class="lead">Thanks for registering! To complete your account setup, please use the one-time verification code (OTP) below. This helps us keep your account secure.</p>
+
+						<div class="otp-box">
+							<span class="otp">{{ otp }}</span>
+						</div>
+
+						<div class="cta">
+							<a href="#" class="button">Enter OTP to Verify</a>
+						</div>
+
+						<p class="muted">If the button doesn't work, manually enter the code shown above in the verification form. The OTP is valid for 10 minutes.</p>
+
+						<p class="lead" style="margin-top:18px;">If you did not create an account with us, please ignore this email or contact support.</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="footer">
+						<div>© {{ current_year }} Our Store — <span style="color:#000000; font-weight:600">support@ourstore.example</span></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
+

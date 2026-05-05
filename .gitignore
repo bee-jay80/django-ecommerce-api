@@ -1,0 +1,127 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nose2-junit.xml
+coverage.xml
+*,cover
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+# If your file storage (media) is inside the repo, ignore it
+media/
+staticfiles/
+static/
+# SQLite database
+db.sqlite3
+
+# Local env files
+.env
+.venv
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor backups
+*~
+*.swp
+*.swo
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# mypy
+.mypy_cache/
+dmypy.json
+dmypy.sock
+
+# pytype
+.pytype/
+
+# profiling
+prof/
+
+# celery
+celerybeat-schedule
+celerybeat.pid
+
+# Redis dump file (optional; uncomment if you don't want to track it)
+# dump.rdb
+
+# Coverage and reports
+.coverage
+htmlcov/
+
+# Installer / wheel
+pip-wheel-metadata/
+*.whl
+
+# Logs
+*.log
+logs/
+
+# macOS
+.DS_Store
+
+# Windows
+ehthumbs.db
+Icon?
+
+# Node (if present)
+node_modules/
+
