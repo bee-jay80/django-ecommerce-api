@@ -16,4 +16,5 @@ dependencies = [
     "pillow>=12.2.0",
     "python-dotenv>=1.2.2",
     "redis>=7.4.0",
+    "whitenoise[brotli]>=6.12.0",
 ]

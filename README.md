@@ -123,14 +123,5 @@ python manage.py test
 - Django CLI: [manage.py](manage.py#L1)
 - Docker compose: [docker-compose.yml](docker-compose.yml#L1)
 
-**Contributing / Next steps**
-- If you want, I can:
-	- Add a `.env.example` with required environment variable names.
-	- Add a `Makefile` or `invoke` tasks for common commands.
-	- Create a CI workflow that runs tests and linting on push.
-
 **License**
 - Add a LICENSE file or update this README with project license details.
-
----
-*README generated on request.*

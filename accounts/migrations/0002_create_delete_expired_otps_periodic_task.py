@@ -16,7 +16,7 @@ def create_periodic_task(apps, schema_editor):
     PeriodicTask.objects.get_or_create(
         interval=schedule,
         name='Delete expired OTPs every 10 minutes',
-        task='delete_expired_otps_task',
+        task='accounts.tasks.delete_expired_otps',
         defaults={
             'enabled': True,
         }
