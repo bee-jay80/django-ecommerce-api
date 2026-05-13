@@ -3,7 +3,6 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
-from django.contrib.auth import get_user_model
 
 from django.utils import timezone
 import logging
@@ -11,31 +10,34 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-# OTP MAIL SENDER
-@shared_task(bind=True, autoretry_for=(Exception,), retry_backoff=True, retry_backoff_max=600, retry_jitter=True, max_retries=5, name="send_otp_email_task")
-def send_otp_email(self, email, otp):
-    User = get_user_model()
-    try:
-        # get user by email
-        user = User.objects.get(email=email)
-    except User.DoesNotExist:
-        return
 
-    subject = "Verify your email"
+@shared_task(name="send_otp_email_task")
+def send_otp_email(email, otp, username=None):
+
+
     current_year = timezone.now().year
+
     html_content = render_to_string(
         "emails/send_email_otp.html",
-        {"user_name": user.username, "otp": otp, "current_year": current_year}
+        {
+            "user_name": username,
+            "otp": otp,
+            "current_year": current_year,
+        }
     )
 
     msg = EmailMultiAlternatives(
-        subject,
-        to=[user.email],
-        from_email=settings.DEFAULT_FROM_EMAIL
+        subject="Verify your email",
+        body=f"Your OTP is {otp}",  # fallback plain text
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        to=[email],
     )
-    msg.attach_alternative(html_content, "text/html")
-    msg.send()
 
+    msg.attach_alternative(html_content, "text/html")
+
+    result = msg.send(fail_silently=False)
+
+    print("EMAIL SENT:", result)
 
 # delete all expired OTPs after every 10 minutes
 @shared_task
